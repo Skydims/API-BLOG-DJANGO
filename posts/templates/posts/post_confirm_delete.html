@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hapus Postingan</title>
+</head>
+<body>
+    <h1>Hapus Postingan</h1>
+    <p>Apakah Anda yakin ingin menghapus postingan "{{ post.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Ya</button>
+        <a href="{% url 'post_list' %}">Tidak</a>
+    </form>
+</body>
+</html>

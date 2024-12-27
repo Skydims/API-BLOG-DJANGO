@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Postingan</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Edit Postingan,Buat Postingan Baru" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Simpan</button>
+        <a href="{% url 'post_list' %}">Kembali</a>
+    </form>
+</body>
+</html>
